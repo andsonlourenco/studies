@@ -12,7 +12,7 @@ interface Todo {
   done: boolean;
 }
 
-function create(content: string): Todo {
+export function create(content: string): Todo {
   const todo: Todo = {
     id: uuid(),
     date: new Date().toISOString(),
@@ -45,7 +45,7 @@ export function read(): Array<Todo> {
   return db.todos;
 }
 
-function update(id: UUID, partialTodo: Partial<Todo>): Todo {
+export function update(id: UUID, partialTodo: Partial<Todo>): Todo {
   let updateTodo;
   const todos = read();
 
@@ -74,13 +74,13 @@ function update(id: UUID, partialTodo: Partial<Todo>): Todo {
   return updateTodo;
 }
 
-function updateContentById(id: UUID, content: string): Todo {
+export function updateContentById(id: UUID, content: string): Todo {
   return update(id, {
     content,
   });
 }
 
-function deleteById(id: UUID) {
+export function deleteById(id: UUID) {
   const todos = read();
 
   const todosWithoutOne = todos.filter((todo) => {
@@ -103,7 +103,7 @@ function deleteById(id: UUID) {
   );
 }
 
-function CLEAN_DB() {
+export function CLEAN_DB() {
   fs.writeFileSync(DB_FILE_PATH, "");
 }
 
