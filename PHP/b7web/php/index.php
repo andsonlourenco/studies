@@ -49,45 +49,91 @@
 //
 //echo Matematica::somar(10, 20);
 
-class Calculadora{
-  public $number = 0;
+//class Calculadora{
+//  public $number = 0;
+//
+//  public function add($value) {
+//    $this->number += $value;
+//  }
+//
+//  public function sub($value){
+//    $this->number -= $value;
+//  }
+//  
+//  public function multiply($value){
+//    $this->number *= $value;
+//  }
+//  public function divide($value){
+//    $this->number /= $value;
+//  }
+//
+//  public function total()
+//  {
+//    return $this->number;
+//  }
+//  
+//  public function clear(){
+//    return $this->number = 0;
+//  }
+//
+//}
+//
+//$calc = new Calculadora();
+//$calc->add(12);
+//$calc->add(2);
+//$calc->sub(1);
+//$calc->multiply(3);
+//$calc->divide(2);
+//$calc->add(0.5);
+//
+//echo "TOTAL: ".$calc->total().PHP_EOL;
+//
+//$calc->clear();
+//
+//echo "TOTAL: ".$calc->total();
 
-  public function add($value) {
-    $this->number += $value;
-  }
+//HERANÇA
 
-  public function sub($value){
-    $this->number -= $value;
+class Post
+{
+  private int $id;
+  private int $likes = 0;
+  
+  public function setId($i){
+    $this->id = $i;
   }
   
-  public function multiply($value){
-    $this->number *= $value;
-  }
-  public function divide($value){
-    $this->number /= $value;
-  }
-
-  public function total()
+  public function getId()
   {
-    return $this->number;
+    return $this->id;
   }
   
-  public function clear(){
-    return $this->number = 0;
+  public function setLikes(int $likes)
+  {
+    $this->likes = $likes;
   }
-
+  
+  public function getLikes()
+  {
+    return $this->likes;
+  }
 }
 
-$calc = new Calculadora();
-$calc->add(12);
-$calc->add(2);
-$calc->sub(1);
-$calc->multiply(3);
-$calc->divide(2);
-$calc->add(0.5);
+class Foto extends Post{
+  private $url;
 
-echo "TOTAL: ".$calc->total().PHP_EOL;
+  public function __construct($id)
+  {
+    $this->setId($id);
+  }
 
-$calc->clear();
+  public function getUrl()
+  {
+    return $this->url;
+  }
+}
 
-echo "TOTAL: ".$calc->total();
+$foto = new Foto(20);
+$foto->setLikes(12);
+
+echo "FOTO: #".$foto->getId()." - " .$foto->getLikes()." Likes";
