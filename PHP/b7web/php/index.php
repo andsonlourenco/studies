@@ -94,46 +94,68 @@
 
 //HERANÇA
 
-class Post
-{
-  private int $id;
-  private int $likes = 0;
-  
-  public function setId($i){
-    $this->id = $i;
-  }
-  
-  public function getId()
+//class Post
+//{
+//  private int $id;
+//  private int $likes = 0;
+//  
+//  public function setId($i){
+//    $this->id = $i;
+//  }
+//  
+//  public function getId()
+//  {
+//    return $this->id;
+//  }
+//  
+//  public function setLikes(int $likes)
+//  {
+//    $this->likes = $likes;
+//  }
+//  
+//  public function getLikes()
+//  {
+//    return $this->likes;
+//  }
+//}
+//
+//class Foto extends Post{
+//  private $url;
+//
+//  public function __construct($id)
+//  {
+//    $this->setId($id);
+//  }
+//
+//  public function getUrl()
+//  {
+//    return $this->url;
+//  }
+//}
+//
+//$foto = new Foto(20);
+//$foto->setLikes(12);
+//
+//echo "FOTO: #".$foto->getId()." - " .$foto->getLikes()." Likes";
+
+//INTERFACE
+
+interface Database {
+  public function listaProduto();
+  public function adicionaProduto();
+  public function alterarProduto();
+}
+class MysqlDB implements Database {
+  public function listaProduto()
   {
-    return $this->id;
+    
   }
-  
-  public function setLikes(int $likes)
+  public function adicionaProduto()
   {
-    $this->likes = $likes;
+    
   }
-  
-  public function getLikes()
+  public function alterarProduto()
   {
-    return $this->likes;
+    
   }
 }
-
-class Foto extends Post{
-  private $url;
-
-  public function __construct($id)
-  {
-    $this->setId($id);
-  }
-
-  public function getUrl()
-  {
-    return $this->url;
-  }
-}
-
-$foto = new Foto(20);
-$foto->setLikes(12);
-
-echo "FOTO: #".$foto->getId()." - " .$foto->getLikes()." Likes";
