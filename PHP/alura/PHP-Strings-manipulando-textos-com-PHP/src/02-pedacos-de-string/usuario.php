@@ -2,8 +2,10 @@
 
 $email = 'andson@localhost.com.br';
 
-echo substr($email, 0, 6);
+$posicaoDoArroba = strpos($email, '@');
+
+echo substr($email, 0, $posicaoDoArroba);
 
 echo PHP_EOL;
 
-echo substr($email, 7);
+echo substr($email, $posicaoDoArroba + 1);
