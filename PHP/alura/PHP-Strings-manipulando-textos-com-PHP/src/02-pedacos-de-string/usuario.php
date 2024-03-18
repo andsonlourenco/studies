@@ -1,6 +1,12 @@
 <?php
 
 $email = 'andson@localhost.com.br';
+$senha = 'ghjkghjkghjkghjk';
+
+//strlen pega o tamanho da string em bits
+if(strlen($senha) < 8){
+  echo 'Senha insegura' . PHP_EOL;
+}
 
 $posicaoDoArroba = strpos($email, '@');
 
