@@ -1,7 +1,7 @@
 <?php
 
 $email = 'andson@localhost.com.br';
-$senha = 'ghjkghjkghjkghjk';
+$senha = 'áẃú';
 
 //strlen pega o tamanho da string em bits
 if(strlen($senha) < 8){
@@ -10,8 +10,8 @@ if(strlen($senha) < 8){
 
 $posicaoDoArroba = strpos($email, '@');
 
-echo substr($email, 0, $posicaoDoArroba);
+$usuario = substr($email, 0, $posicaoDoArroba);
 
-echo PHP_EOL;
-
+echo mb_strtoupper($usuario) . PHP_EOL;
+echo mb_strtolower($usuario) . PHP_EOL;
 echo substr($email, $posicaoDoArroba + 1);
