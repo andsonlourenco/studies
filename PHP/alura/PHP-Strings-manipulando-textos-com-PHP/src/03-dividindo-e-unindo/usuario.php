@@ -1,7 +1,7 @@
 <?php
 
 $nome = 'Andson Lourenco';
-$email = 'andson@localhost.com.br';
+$email = ' andson@localhost.com.br ';
 $senha = 'áẃú';
 
 //strlen pega o tamanho da string em bits
@@ -20,3 +20,5 @@ echo substr($email, $posicaoDoArroba + 1) . PHP_EOL;
 list($nome, $sobrenome) = explode(' ', $nome);
 echo 'Nome: ' . $nome . PHP_EOL;
 echo 'Sobrenome: ' . $sobrenome . PHP_EOL;
+
+echo trim($email, '') . PHP_EOL;
