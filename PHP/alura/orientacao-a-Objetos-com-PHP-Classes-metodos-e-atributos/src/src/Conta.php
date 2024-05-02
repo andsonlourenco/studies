@@ -4,7 +4,7 @@ class Conta
 {
   public $cpfTitular;
   public $nomeTitular;
-  public $saldo = 0;
+  private $saldo = 0;
 
   public function sacar(float $valorASacar)
   {
