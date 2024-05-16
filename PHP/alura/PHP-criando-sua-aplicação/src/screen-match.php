@@ -7,18 +7,27 @@ $nomeFilme = "Thor: Ragnarok";
 $anoLancamento = 2022;
 
 $quantidadeDeNotas = $argc - 1;
-$somaDeNotas = 0;
+$notas = [];
 
 for ($contador = 1; $contador < $argc; $contador++){
-  $somaDeNotas += $argv[$contador];
+  $notas[] = (float) $argv[$contador];
 }
+
+$somaDeNotas = 0;
+// for ($i = 0; $i < count($notas) ; $i++){
+//   $somaDeNotas += $notas[$i];
+// }
+
+// foreach($notas as $nota){
+//   $somaDeNotas += $nota;
+// }
 
 // $contador = 1;
 // while ($argv[$contador] !=0){
 //   $somaDeNotas += $argv[$contador++];
 // }
 
-$notaFilme = $somaDeNotas / $quantidadeDeNotas;
+$notaFilme = array_sum($notas) / $quantidadeDeNotas;
 $incluidoNoPlano = true;
 
 echo $notaFilme . PHP_EOL;
