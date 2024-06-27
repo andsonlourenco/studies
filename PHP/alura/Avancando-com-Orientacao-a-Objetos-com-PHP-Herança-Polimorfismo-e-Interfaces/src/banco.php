@@ -5,6 +5,11 @@ require_once 'src/Modelo/Conta/Titular.php';
 require_once 'src/Modelo/CPF.php';
 require_once 'src/Modelo/Endereco.php';
 
+use Alura\Banco\Modelo\Conta\Titular;
+use Alura\Banco\Modelo\Conta\Conta;
+use Alura\Banco\Modelo\Endereco;
+use Alura\Banco\Modelo\CPF;
+
 $endereco = new Endereco('cidade1', 'bairro1', 'rua de teste1', '234');
 $andson = new Titular(new CPF('123.456.789-00'), 'Andson', $endereco);
 $primeiraConta = new Conta($andson);
