@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  src:
+    build: .
+    ports:
+      - "80:80"
+    volumes:
+      - ./src:/var/www/html
+    networks:
+      - default
+  db:
+    image: mariadb
+    ports:
+      - "3306:3306"
+    environment:
+      MARIADB_ROOT_PASSWORD: root
+    networks:
+      - default
+
+volumes:
+  db_data:
