@@ -1,0 +1,11 @@
+<form action="calc.php" method="get">
+  <input type="number" name="n1">
+  <select name="op">
+    <option value="-">-</option>
+    <option value="+">+</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+  </select>
+  <input type="number" name="n2">
+  <input type="submit" value="Calcular">
+</form>
