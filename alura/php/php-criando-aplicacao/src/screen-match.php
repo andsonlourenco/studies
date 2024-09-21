@@ -18,3 +18,11 @@ $incluidoNoPlano = $planoPrime || $anoLancamento < 2020;
 echo "Nome do filme: ". $nomeFilme ."\n";
 echo "Nome do nota: $notaFilme \n";
 echo "Ano de lançamento: $anoLancamento\n";
+
+if ($anoLancamento > 2022){
+  echo "Esse filme é um lançamento \n";
+} elseif ($anoLancamento > 2020 && $anoLancamento <= 2022){
+  echo "Esse filme ainda é novo";
+} else {
+  echo "Esse filme não é um lançamento";
+}
