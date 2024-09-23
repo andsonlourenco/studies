@@ -57,3 +57,8 @@ $filme = [
   "nota" => 7.8,
   "genero" => "super-herói",
 ];
+
+$posicaoDoisPontos  =strpos($filme['nome'], ':');
+var_dump($posicaoDoisPontos);
+
+var_dump(substr($filme['nome'], 0, $posicaoDoisPontos));
