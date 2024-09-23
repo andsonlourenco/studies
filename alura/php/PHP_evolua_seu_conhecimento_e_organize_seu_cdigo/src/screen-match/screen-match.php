@@ -1,20 +1,5 @@
 <?php
-
-function exibeMensagemLancamento(int $ano): void
-{
-  if ($ano > 2022){
-    echo "Esse filme é um lançamento \n";
-  } elseif ($ano > 2020 && $ano <= 2022){
-    echo "Esse filme ainda é novo \n";
-  } else {
-    echo "Esse filme não é um lançamento \n";
-  }
-}
-
-function incluidoNoPlano(bool $planoPrime, int $anoLancamento): bool
-{
-  return $planoPrime || $anoLancamento < 2020;
-}
+require __DIR__ . "/funcoes.php";
 
 echo "Bem-vindo(a) ai screen match! <br>";
 
@@ -62,3 +47,7 @@ $posicaoDoisPontos  =strpos($filme['nome'], ':');
 var_dump($posicaoDoisPontos);
 
 var_dump(substr($filme['nome'], 0, $posicaoDoisPontos));
+echo "<br />";
+echo json_encode($filme);
+echo "<br />";
+var_dump(json_decode('{"nome":"Thor: Ragnarok","ano":2021,"nota":7.8,"genero":"super-her\u00f3i"}'), true);
