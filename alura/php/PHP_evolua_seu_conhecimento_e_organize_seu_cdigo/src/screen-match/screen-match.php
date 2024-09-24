@@ -36,12 +36,12 @@ $genero = match ($nomeFilme){
 
 echo "O gênero do filme é: $genero \n";
 
-$filme = [
-  "nome" => "Thor: Ragnarok",
-  "ano" => 2021,
-  "nota" => 7.8,
-  "genero" => "super-herói",
-];
+$filme = criaFilme(
+  nome:"Thor: Ragnarok", 
+  anoLancamento: 2021, 
+  nota: 7.8, 
+  genero: "super-herói"
+);
 
 $posicaoDoisPontos  =strpos($filme['nome'], ':');
 var_dump($posicaoDoisPontos);
@@ -52,5 +52,5 @@ echo json_encode($filme);
 echo "<br />";
 var_dump(json_decode('{"nome":"Thor: Ragnarok","ano":2021,"nota":7.8,"genero":"super-her\u00f3i"}'), true);
 
-$filmeComoStringJson = json_encode($filme);
-file_put_contents(__DIR__ .'/filme.json', $filmeComoStringJson);
+//$filmeComoStringJson = json_encode($filme);
+//file_put_contents(__DIR__ .'/filme.json', $filmeComoStringJson);
