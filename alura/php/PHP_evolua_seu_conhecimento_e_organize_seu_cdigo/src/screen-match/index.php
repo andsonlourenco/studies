@@ -1,5 +1,6 @@
 <?php
-require __DIR__ . "/funcoes.php";
+require __DIR__ . "/src/Modelo/Filme.php";
+require __DIR__ . "/src/funcoes.php";
 
 echo "Bem-vindo(a) ai screen match! <br>";
 
@@ -43,14 +44,16 @@ $filme = criaFilme(
   genero: "super-herói"
 );
 
-$posicaoDoisPontos  =strpos($filme['nome'], ':');
+var_dump($filme->nome);
+$posicaoDoisPontos = strpos($filme->nome, ':');
 var_dump($posicaoDoisPontos);
 
-var_dump(substr($filme['nome'], 0, $posicaoDoisPontos));
+var_dump(substr($filme->nome, 0, $posicaoDoisPontos));
 echo "<br />";
 echo json_encode($filme);
 echo "<br />";
 var_dump(json_decode('{"nome":"Thor: Ragnarok","ano":2021,"nota":7.8,"genero":"super-her\u00f3i"}'), true);
+
 
 //$filmeComoStringJson = json_encode($filme);
 //file_put_contents(__DIR__ .'/filme.json', $filmeComoStringJson);
