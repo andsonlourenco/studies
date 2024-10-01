@@ -4,7 +4,7 @@ class Filme {
   public string $nome;
   public int $anoLancamento;
   public string $genero;
-  public array $notas = [];
+  private array $notas = [];
   public function avalia(float $nota): void
   {
     $this->notas[] = $nota;
