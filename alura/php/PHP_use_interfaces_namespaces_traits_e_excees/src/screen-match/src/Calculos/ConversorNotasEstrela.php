@@ -2,10 +2,10 @@
 
 class ConversorNotasEstrela
 {
-  public function converte(Titulo $titulo): float
+  public function converte(Avaliavel $avaliavel): float
   {
-    $nota = $titulo->media();
+    $nota = $avaliavel->media();
     
-    return $nota;
+    return round($nota) / 2;
   }
 }
