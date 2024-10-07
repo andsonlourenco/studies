@@ -1,5 +1,6 @@
 <?php
 
+namespace ScreenMatch\Modelo;
 trait ComAvaliacao
 {
   private array $notas = [];
