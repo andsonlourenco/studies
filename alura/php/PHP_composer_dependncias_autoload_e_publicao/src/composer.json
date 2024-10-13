@@ -1,0 +1,14 @@
+{
+  "name": "andonlourenco/buscador-cursos",
+  "description": "Projeto que busca os cursos no site da alura",
+  "minimum-stability": "stable",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Andson Lourenco",
+      "email": "andon-lourenco@hotmail.com"
+    }
+  ],
+  "require": {
+  }
+}
