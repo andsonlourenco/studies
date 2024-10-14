@@ -6,6 +6,11 @@ RUN docker-php-ext-install pdo pdo_mysql mysqli
 # Install Composer 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
+RUN apt-get update && apt-get install -y \
+    git \
+    unzip \
+    zip
+
 # Install xdebug
 RUN pecl install xdebug
 RUN docker-php-ext-enable xdebug
