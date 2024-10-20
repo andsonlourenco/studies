@@ -1,0 +1,12 @@
+{
+  "name": "PHP Development",
+  "dockerFile": "Dockerfile",  // Seu Dockerfile deve estar na raiz ou defina o caminho correto aqui
+  "extensions": [
+    "felixfbecker.php-debug",  // Extensão de debugging PHP
+    "bmewburn.vscode-intelephense-client"  // IntelliSense para PHP
+  ],
+  "settings": {
+    "php.validate.executablePath": "/usr/local/bin/php"  // Caminho para o PHP dentro do contêiner
+  },
+  "remoteUser": "vscode"  // Usuário padrão dentro do contêiner
+}
