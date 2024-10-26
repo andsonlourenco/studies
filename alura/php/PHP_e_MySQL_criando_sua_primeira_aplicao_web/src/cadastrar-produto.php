@@ -11,6 +11,11 @@
       $_POST['descricao'],
       $_POST['preco'],
     );
+
+    $produtoRepositorio = new ProdutoRepositorio($pdo);
+    $produtoRepositorio->salvar($produto);
+
+    header("Location: admin.php");
   }
 ?>
 
