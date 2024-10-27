@@ -58,4 +58,9 @@ class produto
   {
     return "R$ " . number_format($this->preco, 2) ;
   }
+
+  public function setImage(string $imagem): void
+  {
+    $this->imagem = $imagem;
+  }
 }
