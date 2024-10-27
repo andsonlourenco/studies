@@ -12,7 +12,7 @@
       $_POST['preco'],
     );
 
-    if(isset($_FILES['imagem'])){
+    if(isset($_FILES['imagem']) == UPLOAD_ERR_OK){
       $produto->setImage(uniqid().$_FILES['imagem']['name']);
       move_uploaded_file($_FILES['imagem']['tmp_name'], $produto->getImagemDiretorio());
     }
