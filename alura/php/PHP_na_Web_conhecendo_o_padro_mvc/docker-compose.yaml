@@ -9,6 +9,8 @@ services:
       - "host.docker.internal:host-gateway"
     volumes:
       - ./src:/var/www/html
+      - ./config/apache/default.conf:/etc/apache2/sites-available/000-default.conf
+
     networks:
       - default
   db:

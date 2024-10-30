@@ -16,4 +16,6 @@ RUN pecl install xdebug
 RUN docker-php-ext-enable xdebug
 COPY config/php.ini /usr/local/etc/php/php.ini
 
+RUN a2enmod rewrite
+
 COPY src/ /var/www/html

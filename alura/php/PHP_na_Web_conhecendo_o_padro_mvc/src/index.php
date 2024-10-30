@@ -1,20 +1,25 @@
 <?php
 declare(strict_types=1);
 
-if (!array_key_exists('PATH_INFO', $_SERVER) || $_SERVER['PATH_INFO'] === '/') {
+$path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+
+if ($path === '/' || $path === '') {
     require_once 'listagem-videos.php';
-} elseif ($_SERVER['PATH_INFO'] === '/novo-video') {
+} elseif ($path === '/novo-video') {
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         require_once 'formulario.php';
     } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
         require_once 'novo-video.php';
     }
-} elseif ($_SERVER['PATH_INFO'] === '/editar-video') {
+} elseif ($path === '/editar-video') {
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         require_once 'formulario.php';
     } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
         require_once 'editar-video.php';
     }
-} elseif ($_SERVER['PATH_INFO'] === '/remover-video') {
+} elseif ($path === '/remover-video') {
     require_once 'remover-video.php';
+} else {
+    http_response_code(404);
+    echo "Página não encontrada";
 }
