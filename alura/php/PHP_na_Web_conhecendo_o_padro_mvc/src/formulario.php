@@ -39,13 +39,13 @@ if ($id !== false) {
             <a class="logo" href="/"></a>
 
             <div class="cabecalho__icones">
-                <a href="./enviar-video.html" class="cabecalho__videos"></a>
+                <a href="/novo-video" class="cabecalho__videos"></a>
                 <a href="../pages/login.html" class="cabecalho__sair">Sair</a>
             </div>
         </nav>
     </header>
     <main class="container">
-        <form class="container__formulario" action="<?= $id !== false ? '/editar-video.php' : '/novo-video.php?id=' . $id; ?>" method="post">
+        <form class="container__formulario" method="post">
             <h2 class="formulario__titulo">Envie um vídeo!</h2>
                 <div class="formulario__campo">
                     <label class="campo__etiqueta" for="url">Link embed</label>
