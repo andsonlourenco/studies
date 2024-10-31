@@ -1,4 +1,23 @@
-<?php require_once 'inicio-html.php'; ?>
+<?php
+
+declare(strict_types=1);
+
+namespace Alura\Mvc\Controller;
+use Alura\Mvc\Repository\VideoRepository;
+use PDO;
+
+class VideoListController
+{
+  public function __construct(private VideoRepository $videoRepository) 
+  {
+    
+  }
+
+  public function processaRequisicao(): void
+  {
+    $videoList = $this->videoRepository->all();
+    require_once __DIR__ . '/../../inicio-html.php'; 
+    ?>
     <ul class="videos__container" alt="videos alura">
       <?php foreach ($videoList as $video): ?>
           <li class="videos__item">
@@ -17,4 +36,6 @@
           </li>
       <?php endforeach; ?>
     </ul>
-<?php require_once 'fim-html.php'; ?>
+    <?php require_once __DIR__ . '/../../fim-html.php';
+  }
+}
