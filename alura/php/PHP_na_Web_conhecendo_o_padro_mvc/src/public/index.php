@@ -14,28 +14,25 @@ use Alura\Mvc\Repository\VideoRepository;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-$path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+// $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $dbPath = __DIR__ . '/../banco.sqlite';
 $pdo = new PDO("sqlite:$dbPath");
 $videoRepository = new VideoRepository($pdo);
 
-if ($path === '/' || $path === '') {
-  $controller = new VideoListController($videoRepository);
-} elseif ($path === '/novo-video') {
-  if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    $controller = new VideoFormController($videoRepository);
-  } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $controller = new NewVideoController($videoRepository);
-  }
-} elseif ($path === '/editar-video') {
-  if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-      $controller = new VideoFormController($videoRepository);
-  } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
-      $controller = new EditVideoController($videoRepository);
-  }
-} elseif ($path === '/remover-video') {
-  $controller = new DeleteVideoController($videoRepository);
-} else {
+$routes = require_once __DIR__ . '/../config/routes.php';
+
+$requestUri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+$pathInfo = $requestUri;
+$httpMethod = $_SERVER['REQUEST_METHOD'];
+
+$key = "$httpMethod|$pathInfo";
+if(array_key_exists($key, $routes)){
+  $controllerClass = $routes["$httpMethod|$pathInfo"];
+
+  
+  $controller = new $controllerClass($videoRepository);
+}else{
   $controller = new Error404Controller();
-  echo "Página não encontrada";
 }
+/** @var Controller $controller  */
+$controller->processaRequisicao();
