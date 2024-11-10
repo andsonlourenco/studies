@@ -6,6 +6,10 @@
   },
   "require": {
     "psr/http-message": "^2.0",
-    "nyholm/psr7": "^1.8"
+    "nyholm/psr7": "^1.8",
+    "nyholm/psr7-server": "^1.1",
+    "ext-pdo": "*",
+    "ext-fileinfo": "*",
+    "psr/http-server-handler": "^1.0"
   }
 }
