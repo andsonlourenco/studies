@@ -1,4 +1,4 @@
-<?php require_once __DIR__ . '/inicio-html.php'; ?>
+<?php $this->insert('inicio-html'); ?>
   <main class="container">
     <form class="container__formulario" method="post" enctype="multipart/form-data">
       <h2 class="formulario__titulo">Envie um vídeo!</h2>
@@ -35,5 +35,4 @@
     </form>
   </main>
 
-  <?php
-  require_once __DIR__ . '/fim-html.php';
+  <?php $this->insert('fim-html');
