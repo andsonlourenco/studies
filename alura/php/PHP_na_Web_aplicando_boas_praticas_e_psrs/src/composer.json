@@ -11,6 +11,7 @@
     "ext-pdo": "*",
     "ext-fileinfo": "*",
     "psr/http-server-handler": "^1.0",
-    "psr/container": "^2.0"
+    "psr/container": "^2.0",
+    "php-di/php-di": "^7.0"
   }
 }
