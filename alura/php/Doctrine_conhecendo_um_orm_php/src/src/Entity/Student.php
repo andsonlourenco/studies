@@ -17,7 +17,7 @@ class Student
 
   public function __construct(
     #[Column]
-    public readonly string $name
+    public string $name
   )
   {
   }
