@@ -17,7 +17,7 @@ class Student
   public int $id;
 
   #[OneToMany(targetEntity: Phone::class, mappedBy: 'student')]
-  private readonly Collection $phones;
+  private Collection $phones;
 
   public function __construct(
     #[Column]
@@ -29,9 +29,12 @@ class Student
   public function addPhone(Phone $phone)
   {
     $this->phones->add($phone);
-    $phone->setSudent($this);
+    $phone->setStudent($this);
   }
 
+  /**
+   * @return iterable<Phone>
+  */
   public function phones(): iterable
   {
     return $this->phones;

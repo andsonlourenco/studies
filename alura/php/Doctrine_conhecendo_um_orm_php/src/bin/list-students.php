@@ -13,6 +13,12 @@ $studentList = $studentRepository->findAll();
 
 foreach ($studentList as $student) {
   echo "ID: $student->id\nNome: $student->name\n\n";
+  echo "Telefones:\n";
+  foreach ($student->phones() as $phone) {
+    echo "  - $phone->number\n";
+  }
+
+  echo "\n";
 }
 
 // /** @var Student $student */

@@ -14,8 +14,8 @@ class Phone
   #[Id, GeneratedValue, Column]
   public int $id;
 
-  #[ManyToOne(targetEntity: Phone::class, inversedBy: "phones")]
-  public readonly iterable $student;
+  #[ManyToOne(targetEntity: Student::class, inversedBy: "phones")]
+  public readonly Student $student;
 
   public function __construct(
     #[Column]
@@ -23,7 +23,7 @@ class Phone
   ) {
   }
 
-  public function setSudent(Student $student): void
+  public function setStudent(Student $student): void
   {
     $this->student = $student;
   }
