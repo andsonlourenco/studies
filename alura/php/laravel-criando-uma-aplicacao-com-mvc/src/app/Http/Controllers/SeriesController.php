@@ -14,7 +14,7 @@ class SeriesController extends Controller
         'Grey\'s Anatomy'
         ];
     
-        return view('listar-series', compact('series'));
+        return view('series.index', compact('series'));
         
     }
 }
