@@ -6,7 +6,7 @@
   <title>{{$title}} - Conrole de Séries </title>
   @vite(['resources/scss/app.scss', 'resources/js/app.js'])
 </head>
-<body>
+<body class="container">
   <h1>{{$title}}</h1>
 
   {{$slot}}
