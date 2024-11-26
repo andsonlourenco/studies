@@ -1,0 +1,26 @@
+version: "3"
+
+services:
+  src:
+    build: .
+    ports:
+      - "80:80"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ./src:/var/www/html
+      - ./config/apache/default.conf:/etc/apache2/sites-available/000-default.conf
+
+    networks:
+      - default
+  db:
+    image: mariadb
+    ports:
+      - "3306:3306"
+    environment:
+      MARIADB_ROOT_PASSWORD: root
+    networks:
+      - default
+
+volumes:
+  db_data:
