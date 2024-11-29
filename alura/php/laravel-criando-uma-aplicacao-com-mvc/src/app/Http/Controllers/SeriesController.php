@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class SeriesController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
         $series = [
         'Punisher',
@@ -21,5 +21,10 @@ class SeriesController extends Controller
     public function create()
     {
         return view('series.create');
+    }
+
+    public function store(Request $request)
+    {
+        $nomeSDerie = $request->input('nome');
     }
 }
