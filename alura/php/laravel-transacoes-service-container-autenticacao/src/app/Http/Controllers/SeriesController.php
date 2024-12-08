@@ -29,13 +29,9 @@ class SeriesController extends Controller
 
     public function store(SeriesFormRequest $request)
     {
-        $serie =  $this->repository->add($request);
-
-        if ($serie) {
-            return to_route('series.index')->with('mensagem.sucesso', "Série {$serie->nome} adicionada com sucesso");
-        } else {
-            return to_route('series.index')->with('mensagem.erro', "Erro ao adicionar a série.");
-        }
+        $serie = $this->repository->add($request);
+        
+        return to_route('series.index')->with('mensagem.sucesso', "Série {$serie->nome} adicionada com sucesso");
     }
 
     public function destroy(Series $series)
