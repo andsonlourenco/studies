@@ -18,4 +18,11 @@ class LoginController
       return redirect()->back()->withErrors(['Usuário ou senha inválidos']);
     };
   }
+
+  public function destroy()
+  {
+    Auth::logout();
+
+    return to_route('login');
+  }
 }

@@ -6,6 +6,15 @@
   <title>{{$title}} - Conrole de Séries </title>
   @vite(['resources/scss/app.scss', 'resources/js/app.js'])
 </head>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{{ route('series.index') }}">Home</a>
+
+    <a href="{{ route('logout') }}">Sair</a>
+  </div>
+</nav>
+
 <body class="container">
   <h1>{{$title}}</h1>
 
