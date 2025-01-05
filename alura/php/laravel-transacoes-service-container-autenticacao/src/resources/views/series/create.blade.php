@@ -15,13 +15,13 @@
       </div>
 
       <div class="col-2">
-        <label for="seasonQty" class="form-label">Nº Temporadas: </label>
+        <label for="seasonsQty" class="form-label">Nº Temporadas: </label>
         <input 
-        type="text" 
-        id="seasonQty" 
-        name="seasonQty" 
-        class="form-control" 
-        value="{{old('seasonQty')}}"
+          type="text" 
+          id="seasonsQty" 
+          name="seasonsQty" 
+          class="form-control" 
+          value="{{ old('seasonsQty') }}"
         >
       </div>
 
